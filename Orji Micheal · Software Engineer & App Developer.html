@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Orji Micheal · Software Engineer & App Developer</title>
+  <!-- Google Fonts + Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fefefe;
+      font-family: 'Inter', sans-serif;
+      color: #1a1a2c;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 56px;
+      height: 4px;
+      background: #2563eb;
+      border-radius: 4px;
+    }
+
+    /* Header & Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2d3a5e;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+      border-radius: 0 0 2rem 2rem;
+      padding: 3rem 0 4rem 0;
+    }
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-text {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: #dbeafe;
+      color: #1e40af;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero-highlight {
+      color: #2563eb;
+      border-bottom: 3px solid #93c5fd;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #334155;
+      margin-bottom: 1.8rem;
+      max-width: 550px;
+    }
+    .contact-info-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+    .contact-info-hero span i {
+      width: 1.5rem;
+      color: #2563eb;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #1e3a8a;
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #94a3b8;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1e293b;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    .hero-stats {
+      flex: 0.8;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+    }
+    .stat-item {
+      margin-bottom: 1.2rem;
+    }
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #1e3a8a;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .skill-card {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #e9eef3;
+      transition: all 0.2s;
+    }
+    .skill-card:hover {
+      border-color: #bfdbfe;
+      box-shadow: 0 12px 20px -12px rgba(0,0,0,0.08);
+    }
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2563eb;
+    }
+    .skill-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .skill-tag {
+      background: #eef2ff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1e40af;
+    }
+
+    /* Experience & project cards */
+    .exp-item, .project-card {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #edf2f7;
+      transition: 0.2s;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .exp-date {
+      color: #3b82f6;
+      font-weight: 500;
+    }
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+    }
+    .project-role {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 0.6rem;
+    }
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.8rem 0;
+    }
+    .stack {
+      background: #f1f5f9;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    /* Languages + contact */
+    .lang-items {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .lang-badge {
+      background: #f1f5f9;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+    .footer-social a {
+      color: #94a3b8;
+      margin: 0 0.8rem;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: #2563eb;
+    }
+    hr {
+      margin: 1rem 0;
+      border-color: #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+      .section-title {
+        font-size: 1.7rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">ORJI MICHEAL</div>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Connect</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero with integrated contact & summary -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge"><i class="fas fa-code"></i> Software Engineer · Flutter | Full-stack</div>
+          <h1>Orji Micheal <span class="hero-highlight">Chukwuemeka</span></h1>
+          <p>Multifaceted Software Engineer & App Developer with expertise in Flutter, UI/UX, and full-stack web. I blend creative design with robust code to build impactful digital solutions.</p>
+          <div class="contact-info-hero">
+            <span><i class="fas fa-map-marker-alt"></i> Enugu, Nigeria</span>
+            <span><i class="fas fa-phone-alt"></i> +234 9150447967 / +234 9131067082</span>
+            <span><i class="fas fa-envelope"></i> orjimicheal.c@gmail.com</span>
+          </div>
+          <div class="btn-group">
+            <a href="#projects" class="btn-primary"><i class="fab fa-flutter"></i> View Projects</a>
+            <a href="https://bit.ly/orjisLinkedin" class="btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/dashboard" class="btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://x.com/michealchu67399" class="btn-outline" target="_blank"><i class="fab fa-twitter"></i> X</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-number">5+</span> <br>Tech stacks mastered</div>
+          <div class="stat-item"><span class="stat-number">8+</span> <br>Full projects shipped</div>
+          <div class="stat-item"><span class="stat-number">2+ yrs</span> <br>Teaching & mentorship</div>
+          <div class="stat-item"><i class="fas fa-check-circle" style="color:#2563eb;"></i> Advanced Diploma: Software Engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary / About section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Professional Summary</h2>
+      <div style="background: #f8fafc; border-radius: 1.5rem; padding: 1.8rem; border-left: 5px solid #2563eb;">
+        <p style="font-size: 1.05rem; line-height: 1.6;">A multifaceted Software Engineer and App Developer with expertise in Flutter, UI/UX design, and full-stack web development. Proficient in Flutter/Dart, JavaScript, HTML5, Java, Python, and React. Skilled in productivity tools, systems administration, and education technology. Known for strong problem-solving abilities, public speaking, and a passion for building impactful digital solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience & Instructor role -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">IT Instructor</div>
+          <div class="exp-date">June 2025 – Present</div>
+        </div>
+        <div style="font-weight: 500; margin-bottom: 0.3rem;">Aptech – Enugu State, Nigeria</div>
+        <ul style="margin-left: 1.2rem; color: #2d3a5e;">
+          <li>Created engaging lesson plans, activities, and projects catering to diverse learning styles.</li>
+          <li>Instructed students on programming languages (Python, Java, Scratch, HTML/CSS, React, Flutter/Dart), operating systems, web and app development.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Software Engineering Trainee / Project Lead</div>
+          <div class="exp-date">2023 – 2025</div>
+        </div>
+        <div style="font-weight: 500; margin-bottom: 0.3rem;">Aptech Nigeria · Advanced Diploma</div>
+        <ul style="margin-left: 1.2rem;">
+          <li>Led multiple cross-functional team projects, delivered full-stack web and mobile apps.</li>
+          <li>Mentored junior developers in Flutter, Firebase and modern UI/UX practices.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects - showcasing design & dev -->
+  <section id="projects" style="background: #fefefe;">
+    <div class="container">
+      <h2 class="section-title">Featured Projects · Code & Design</h2>
+      <div class="skills-grid">
+        <!-- Maxxwallpaper -->
+        <div class="project-card">
+          <h3>Maxxwallpaper.com</h3>
+          <div class="project-role">Project Manager (Jan 2024 – Apr 2024)</div>
+          <p>Managed development and deployment of a wallpaper platform, coordinated team tasks and ensured timely delivery.</p>
+          <div class="project-stack"><span class="stack">Project Management</span><span class="stack">Agile</span><span class="stack">Web Deployment</span></div>
+        </div>
+        <!-- To-Do List App -->
+        <div class="project-card">
+          <h3>To-Do List App</h3>
+          <div class="project-role">Solo Developer · Flutter & Firebase</div>
+          <p>Mobile task management app built with Android Studio, Flutter, and Firebase. Implemented user authentication, improved app performance by 30%.</p>
+          <div class="project-stack"><span class="stack">Flutter/Dart</span><span class="stack">Firebase Auth</span><span class="stack">Provider</span></div>
+        </div>
+        <!-- E‑commerce Website -->
+        <div class="project-card">
+          <h3>Contributed E‑Commerce Website</h3>
+          <div class="project-role">Lead Developer (Jun 2024 – Sep 2024)</div>
+          <p>Web app for online shopping with Python, Django, HTML/CSS. Designed and integrated payment gateway.</p>
+          <div class="project-stack"><span class="stack">Python/Django</span><span class="stack">PostgreSQL</span><span class="stack">Paystack API</span></div>
+        </div>
+        <!-- City Tour Guide App -->
+        <div class="project-card">
+          <h3>City Tour Guide App</h3>
+          <div class="project-role">Solo Developer · Flutter, Firebase</div>
+          <p>Discover tourist sights in any city. Real-time access to multiple sites, integrated Maps API, and dynamic UI.</p>
+          <div class="project-stack"><span class="stack">Flutter</span><span class="stack">Google Maps</span><span class="stack">Firebase Firestore</span></div>
+        </div>
+        <!-- Additional: design-centric piece -->
+        <div class="project-card">
+          <h3>Portfolio UI/UX System</h3>
+          <div class="project-role">Design + Frontend</div>
+          <p>Custom portfolio identity: responsive layout, micro-interactions, design tokens from Figma to production-ready HTML/CSS/JS.</p>
+          <div class="project-stack"><span class="stack">Figma</span><span class="stack">Responsive Design</span><span class="stack">CSS Grid/Flex</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills section: design + front-end, app dev -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Arsenal · Design & Code</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-flutter"></i></div>
+          <h3>App Development</h3>
+          <p>Flutter (Dart) · Java · Firebase · Mobile UI/UX · APK Deployment</p>
+          <div class="skill-tags"><span class="skill-tag">Cross-platform</span><span class="skill-tag">Material Design</span><span class="skill-tag">REST APIs</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Web Development</h3>
+          <p>Python/Django · HTML5 · CSS3 · JavaScript · React · Responsive Design</p>
+          <div class="skill-tags"><span class="skill-tag">Tailwind</span><span class="skill-tag">SPA</span><span class="skill-tag">Django REST</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Design & Productivity</h3>
+          <p>UI/UX design, wireframing, prototyping (Figma/Adobe XD). Advanced Excel (VBA, PivotTables), Microsoft 365 Suite.</p>
+          <div class="skill-tags"><span class="skill-tag">User Research</span><span class="skill-tag">Design Systems</span><span class="skill-tag">VBA</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Systems & EdTech</h3>
+          <p>Windows OS Administration · Hardware Maintenance · Interactive Whiteboards · Learning Management Systems</p>
+          <div class="skill-tags"><span class="skill-tag">IT Instruction</span><span class="skill-tag">LMS</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education + Languages -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <p><strong>Aptech Nigeria</strong> — Advanced Diploma in Software Engineering <br> (August 2023 – August 2025)</p>
+          <p style="margin-top: 0.8rem;"><strong>Specializations:</strong> Full-stack, Mobile dev, Algorithms, Database design.</p>
+        </div>
+        <div class="skill-card">
+          <h3><i class="fas fa-language"></i> Languages</h3>
+          <div class="lang-items">
+            <span class="lang-badge">English – Expert</span>
+            <span class="lang-badge">Igbo – Native</span>
+            <span class="lang-badge">Pidgin – Fluent</span>
+          </div>
+          <p style="margin-top: 1rem;">Clear technical communication and cross-cultural collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive design/dev little demo to showcase front-end craft -->
+  <section style="background: #f1f5f9; border-radius: 2rem; margin: 1rem 0 2rem 0;">
+    <div class="container" style="padding: 2rem 1.5rem;">
+      <div style="text-align: center;">
+        <h3 style="font-size: 1.6rem;">✨ Live Demo: Design + Interactivity ✨</h3>
+        <p style="margin-bottom: 1rem;">A small front-end micro interaction — bridging my UI/UX design sense with JavaScript motion.</p>
+        <div id="interactiveCard" style="background: white; max-width: 400px; margin: 0 auto; border-radius: 2rem; padding: 1.5rem; box-shadow: 0 12px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; cursor: pointer;">
+          <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: #3b82f6;"></i>
+          <p style="margin-top: 0.5rem; font-weight: 500;">hover or click → design meets code</p>
+          <div style="background: #eef2ff; padding: 0.4rem; border-radius: 40px; margin-top: 1rem; font-size: 0.8rem;" id="statusMsg">✦ built with Flutter / React mindset ✦</div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color:#475569;"><i class="fas fa-code"></i> This card uses CSS transitions & JS – reflecting my passion for front-end craft</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact + footer -->
+  <section id="contact">
+    <div class="container">
+      <div style="background: linear-gradient(110deg, #ffffff, #f0f4fe); border-radius: 2rem; padding: 2.5rem; text-align: center;">
+        <h2 style="font-size: 1.8rem;">Let's build something impactful</h2>
+        <p style="margin: 1rem 0; max-width: 550px; margin-left: auto; margin-right: auto;">Open for freelance collaborations, full-stack & Flutter roles, and tech mentorship.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:orjimicheal.c@gmail.com" class="btn-primary" style="background:#1e3a8a;"><i class="fas fa-envelope"></i> orjimicheal.c@gmail.com</a>
+          <a href="https://bit.ly/orjisLinkedin" target="_blank" class="btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/dashboard" target="_blank" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <hr style="margin: 2rem 0 1rem 0;">
+        <div class="footer-social">
+          <a href="https://x.com/michealchu67399" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-dev"></i></a>
+          <a href="#"><i class="fab fa-figma"></i></a>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">📞 +234 9150447967 / +234 9131067082 | Enugu, Nigeria</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background: #0f172a; color: #cbd5e1; text-align: center; padding: 1.8rem; margin-top: 2rem;">
+  <p>© 2025 Orji Micheal Chukwuemeka — Software Engineer, Flutter & Full‑stack Developer. Designed & coded with purpose.</p>
+</footer>
+
+<script>
+  // interactive front-end demo (showing design+dev synergy)
+  const card = document.getElementById('interactiveCard');
+  const msgDiv = document.getElementById('statusMsg');
+
+  function animateCardEffect(type) {
+    if (type === 'hover') {
+      card.style.transform = 'scale(1.02)';
+      card.style.boxShadow = '0 25px 30px -12px rgba(37,99,235,0.2)';
+      msgDiv.innerHTML = '🎨 UI polish · micro interaction ready';
+    } else if (type === 'leave') {
+      card.style.transform = 'scale(1)';
+      card.style.boxShadow = '0 12px 20px rgba(0,0,0,0.05)';
+      msgDiv.innerHTML = '✦ built with Flutter / React mindset ✦';
+    } else if (type === 'click') {
+      card.style.backgroundColor = '#fef9e3';
+      msgDiv.innerHTML = '⚡ Click event: design system + state management ⚡';
+      setTimeout(() => {
+        card.style.backgroundColor = 'white';
+        if (!card.matches(':hover')) msgDiv.innerHTML = '✦ built with Flutter / React mindset ✦';
+        else msgDiv.innerHTML = '🎨 UI polish · micro interaction ready';
+      }, 700);
+    }
+  }
+
+  card.addEventListener('mouseenter', () => animateCardEffect('hover'));
+  card.addEventListener('mouseleave', () => animateCardEffect('leave'));
+  card.addEventListener('click', () => animateCardEffect('click'));
+</script>
+</body>
+</html>
