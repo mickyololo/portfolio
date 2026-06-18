@@ -23,7 +23,7 @@
     }
 
     .container {
-      max-width: 1080px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 2rem;
     }
@@ -35,18 +35,23 @@
     .section-label {
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #6366f1;
       margin-bottom: 0.5rem;
+      display: inline-block;
+      background: #f0efff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
     }
 
     .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
       margin-bottom: 2.5rem;
       color: #0f172a;
+      line-height: 1.2;
     }
 
     /* ── Header ── */
@@ -57,10 +62,10 @@
       padding: 1.25rem 0;
     }
     .logo {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 800;
       color: #0f172a;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
     .logo span {
       color: #6366f1;
@@ -76,49 +81,77 @@
       font-size: 0.875rem;
       color: #475569;
       transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #6366f1;
+      border-radius: 2px;
+      transition: width 0.25s ease;
     }
     .nav-links a:hover {
       color: #6366f1;
     }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
     /* ── Hero ── */
     .hero {
-      padding: 4rem 0 5rem;
+      padding: 5rem 0 4rem;
     }
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: 1fr 340px;
       gap: 4rem;
       align-items: center;
     }
     .hero-text {
-      max-width: 600px;
+      max-width: 620px;
     }
     .hero-greeting {
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 600;
       color: #6366f1;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f0efff;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
     }
     .hero-text h1 {
-      font-size: 2.75rem;
+      font-size: 3rem;
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
       color: #0f172a;
       margin-bottom: 1.25rem;
+    }
+    .hero-text h1 .accent {
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .hero-text p {
       font-size: 1.05rem;
       color: #475569;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+      max-width: 540px;
     }
     .hero-contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1.25rem;
       margin-bottom: 2rem;
       font-size: 0.85rem;
       color: #334155;
@@ -138,33 +171,33 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: #6366f1;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
       color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
+      padding: 0.75rem 1.6rem;
+      border-radius: 10px;
       font-weight: 600;
       font-size: 0.875rem;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.25);
     }
     .btn-primary:hover {
-      background: #4f46e5;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99,102,241,0.35);
     }
     .btn-outline {
       background: white;
       border: 1.5px solid #e2e8f0;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
+      padding: 0.75rem 1.6rem;
+      border-radius: 10px;
       font-weight: 600;
       font-size: 0.875rem;
       color: #334155;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -172,7 +205,8 @@
     .btn-outline:hover {
       border-color: #6366f1;
       color: #6366f1;
-      box-shadow: 0 2px 8px rgba(99,102,241,0.1);
+      box-shadow: 0 2px 12px rgba(99,102,241,0.12);
+      transform: translateY(-1px);
     }
 
     /* Portrait */
@@ -181,31 +215,44 @@
       justify-content: center;
       align-items: center;
     }
+    .portrait-wrapper {
+      position: relative;
+    }
+    .portrait-ring {
+      position: absolute;
+      inset: -12px;
+      border-radius: 2rem;
+      border: 2px dashed #c7d2fe;
+      opacity: 0.6;
+    }
     .portrait-frame {
-      width: 280px;
-      height: 320px;
+      width: 300px;
+      height: 360px;
       border-radius: 1.5rem;
-      background: linear-gradient(145deg, #ede9fe 0%, #e0e7ff 100%);
+      background: linear-gradient(160deg, #ede9fe 0%, #dbeafe 50%, #e0e7ff 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+      box-shadow: 0 12px 40px rgba(99,102,241,0.12), 0 2px 8px rgba(0,0,0,0.04);
     }
     .portrait-initials {
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 800;
-      color: #6366f1;
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .portrait-caption {
       font-size: 0.75rem;
       font-weight: 600;
-      color: #818cf8;
-      letter-spacing: 0.05em;
+      color: #6366f1;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
     .portrait-frame img {
@@ -214,33 +261,55 @@
       object-fit: cover;
       border-radius: inherit;
     }
+    .portrait-badge {
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      background: white;
+      border-radius: 12px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #6366f1;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
 
     /* ── Stats row ── */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      padding: 2rem 0 0;
+      padding: 2.5rem 0 0;
       border-top: 1px solid #e2e8f0;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
     .stat-card {
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
       background: white;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid #f1f5f9;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .stat-card:hover {
+      border-color: #e0e7ff;
+      box-shadow: 0 4px 16px rgba(99,102,241,0.06);
     }
     .stat-number {
       font-weight: 800;
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       color: #6366f1;
       display: block;
+      letter-spacing: -0.02em;
     }
     .stat-label {
       font-size: 0.8rem;
       color: #64748b;
-      margin-top: 0.25rem;
+      margin-top: 0.35rem;
+      font-weight: 500;
     }
 
     /* ── About ── */
@@ -249,12 +318,13 @@
     }
     .about-block {
       background: white;
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 16px;
+      padding: 2.25rem;
       border: 1px solid #f1f5f9;
       font-size: 1rem;
-      line-height: 1.75;
+      line-height: 1.8;
       color: #334155;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
     /* ── Experience ── */
@@ -265,13 +335,14 @@
     }
     .exp-item {
       background: white;
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
       border: 1px solid #f1f5f9;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .exp-item:hover {
       border-color: #e0e7ff;
+      box-shadow: 0 4px 16px rgba(99,102,241,0.06);
     }
     .exp-header {
       display: flex;
@@ -289,12 +360,15 @@
       color: #6366f1;
       font-weight: 600;
       font-size: 0.8rem;
+      background: #f0efff;
+      padding: 0.15rem 0.6rem;
+      border-radius: 6px;
     }
     .exp-company {
       font-weight: 500;
       font-size: 0.9rem;
       color: #475569;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
     .exp-item ul {
       margin-left: 1.2rem;
@@ -302,31 +376,60 @@
       font-size: 0.9rem;
     }
     .exp-item li {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.3rem;
+      line-height: 1.6;
     }
 
     /* ── Projects grid ── */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
     .project-card {
       background: white;
-      border-radius: 12px;
-      padding: 1.75rem;
+      border-radius: 16px;
+      padding: 2rem;
       border: 1px solid #f1f5f9;
-      transition: all 0.2s;
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #818cf8);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .project-card:hover::before {
+      opacity: 1;
     }
     .project-card:hover {
       border-color: #c7d2fe;
-      box-shadow: 0 8px 24px rgba(99,102,241,0.08);
-      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(99,102,241,0.1);
+      transform: translateY(-3px);
+    }
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #f0efff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: #6366f1;
+      font-size: 1.15rem;
     }
     .project-card h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 0.25rem;
@@ -335,27 +438,27 @@
       color: #6366f1;
       font-weight: 600;
       font-size: 0.78rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
     }
     .project-card p {
       font-size: 0.875rem;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.65;
       flex: 1;
     }
     .project-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin: 1rem 0;
+      margin: 1.25rem 0;
     }
     .stack-tag {
-      background: #f1f5f9;
-      padding: 0.2rem 0.65rem;
+      background: #f5f3ff;
+      padding: 0.25rem 0.7rem;
       border-radius: 6px;
       font-size: 0.7rem;
-      font-weight: 500;
-      color: #475569;
+      font-weight: 600;
+      color: #6366f1;
     }
     .project-link {
       display: inline-flex;
@@ -366,10 +469,12 @@
       color: #6366f1;
       text-decoration: none;
       margin-top: auto;
-      transition: color 0.2s;
+      padding: 0.5rem 0;
+      transition: all 0.2s;
     }
     .project-link:hover {
       color: #4f46e5;
+      gap: 0.55rem;
     }
 
     /* ── Skills ── */
@@ -380,25 +485,26 @@
     }
     .skill-card {
       background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-radius: 14px;
+      padding: 1.75rem;
       border: 1px solid #f1f5f9;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .skill-card:hover {
       border-color: #c7d2fe;
+      box-shadow: 0 4px 16px rgba(99,102,241,0.06);
     }
     .skill-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: #ede9fe;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #f0efff;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1rem;
       color: #6366f1;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
     }
     .skill-card h3 {
       font-size: 1rem;
@@ -409,20 +515,20 @@
     .skill-card p {
       font-size: 0.85rem;
       color: #475569;
-      line-height: 1.5;
+      line-height: 1.55;
     }
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.75rem;
+      margin-top: 0.85rem;
     }
     .skill-tag {
       background: #f5f3ff;
-      padding: 0.15rem 0.6rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 6px;
       font-size: 0.7rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #6366f1;
     }
 
@@ -434,14 +540,14 @@
     }
     .info-card {
       background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-radius: 14px;
+      padding: 1.75rem;
       border: 1px solid #f1f5f9;
     }
     .info-card h3 {
       font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       color: #0f172a;
       display: flex;
       align-items: center;
@@ -449,35 +555,38 @@
     }
     .info-card h3 i {
       color: #6366f1;
+      font-size: 0.95rem;
     }
     .info-card p {
       font-size: 0.9rem;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.65;
     }
     .lang-items {
       display: flex;
       gap: 0.75rem;
       flex-wrap: wrap;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
     }
     .lang-badge {
       background: #f5f3ff;
-      padding: 0.4rem 1rem;
+      padding: 0.45rem 1rem;
       border-radius: 8px;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.8rem;
-      color: #475569;
+      color: #6366f1;
+      border: 1px solid #ede9fe;
     }
 
     /* ── Interactive demo ── */
     .demo-section {
-      background: #f8fafc;
-      border-radius: 16px;
+      background: linear-gradient(145deg, #f8fafc, #f0efff);
+      border-radius: 20px;
       padding: 3rem 2rem;
       text-align: center;
       margin: 0 auto;
       max-width: 600px;
+      border: 1px solid #e0e7ff;
     }
     .demo-section h3 {
       font-size: 1.1rem;
@@ -494,8 +603,8 @@
       background: white;
       max-width: 360px;
       margin: 0 auto;
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-radius: 14px;
+      padding: 1.75rem;
       border: 1px solid #f1f5f9;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       transition: all 0.3s ease;
@@ -519,6 +628,7 @@
       font-size: 0.78rem;
       color: #6366f1;
       display: inline-block;
+      font-weight: 500;
     }
     .demo-note {
       margin-top: 1.25rem;
@@ -529,21 +639,24 @@
     /* ── Contact ── */
     .contact-block {
       background: white;
-      border-radius: 16px;
-      padding: 3rem;
+      border-radius: 20px;
+      padding: 3.5rem;
       text-align: center;
       border: 1px solid #f1f5f9;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
     .contact-block h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.65rem;
+      font-weight: 800;
       color: #0f172a;
+      letter-spacing: -0.02em;
     }
     .contact-block > p {
-      margin: 0.75rem auto 1.5rem;
+      margin: 0.85rem auto 2rem;
       max-width: 480px;
       font-size: 0.95rem;
       color: #475569;
+      line-height: 1.65;
     }
     .contact-btns {
       display: flex;
@@ -554,23 +667,31 @@
     .contact-divider {
       border: none;
       border-top: 1px solid #f1f5f9;
-      margin: 2rem 0 1.25rem;
+      margin: 2rem 0 1.5rem;
     }
     .footer-social {
       display: flex;
       justify-content: center;
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
     .footer-social a {
       color: #94a3b8;
-      font-size: 1.1rem;
-      transition: color 0.2s;
+      font-size: 1.15rem;
+      transition: all 0.2s;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #f8fafc;
     }
     .footer-social a:hover {
       color: #6366f1;
+      background: #f0efff;
     }
     .contact-meta {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       font-size: 0.78rem;
       color: #94a3b8;
     }
@@ -580,20 +701,29 @@
       background: #0f172a;
       color: #94a3b8;
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.75rem;
       margin-top: 2rem;
       font-size: 0.8rem;
     }
 
     /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 0 2.5rem;
+      }
       .hero-inner {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
       }
       .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.25rem;
       }
       .hero-text p {
         max-width: none;
@@ -605,8 +735,8 @@
         justify-content: center;
       }
       .portrait-frame {
-        width: 220px;
-        height: 260px;
+        width: 240px;
+        height: 290px;
       }
       .hero-portrait {
         order: -1;
@@ -614,6 +744,7 @@
       .stats-row {
         grid-template-columns: 1fr;
         gap: 1rem;
+        margin-top: 2.5rem;
       }
       .navbar {
         flex-direction: column;
@@ -623,22 +754,59 @@
         gap: 1.25rem;
       }
       .section-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
       .container {
         padding: 0 1.25rem;
       }
       section {
-        padding: 3rem 0;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
+        padding: 3.5rem 0;
       }
       .contact-block {
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.5rem;
       }
       .demo-section {
         padding: 2rem 1.25rem;
+      }
+      .exp-item {
+        padding: 1.5rem;
+      }
+      .hero-greeting {
+        font-size: 0.78rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 1.85rem;
+      }
+      .hero-contact {
+        gap: 0.75rem;
+        font-size: 0.8rem;
+      }
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .contact-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-btns .btn-primary,
+      .contact-btns .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .stats-row {
+        gap: 0.75rem;
+      }
+      .stat-card {
+        padding: 1.25rem 0.75rem;
       }
     }
   </style>
@@ -665,8 +833,8 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <div class="hero-greeting">Software Engineer &middot; Flutter &amp; Full-stack</div>
-          <h1>Orji Micheal Chukwuemeka</h1>
+          <div class="hero-greeting"><i class="fas fa-code"></i> Software Engineer &middot; Flutter &amp; Full-stack</div>
+          <h1>Orji Micheal <span class="accent">Chukwuemeka</span></h1>
           <p>Multifaceted Software Engineer and App Developer with expertise in Flutter, UI/UX, and full-stack web. I blend creative design with robust code to build impactful digital solutions.</p>
           <div class="hero-contact">
             <span><i class="fas fa-map-marker-alt"></i> Enugu, Nigeria</span>
@@ -681,9 +849,13 @@
           </div>
         </div>
         <div class="hero-portrait">
-          <div class="portrait-frame">
-            <div class="portrait-initials">OM</div>
-            <div class="portrait-caption">Software Engineer</div>
+          <div class="portrait-wrapper">
+            <div class="portrait-ring"></div>
+            <div class="portrait-frame">
+              <div class="portrait-initials">OM</div>
+              <div class="portrait-caption">Software Engineer</div>
+            </div>
+            <div class="portrait-badge"><i class="fas fa-check-circle"></i> Open to work</div>
           </div>
         </div>
       </div>
@@ -756,43 +928,7 @@
       <div class="projects-grid">
 
         <div class="project-card">
-          <h3>City Tour Guide</h3>
-          <div class="project-role">Solo Developer &middot; Flutter &amp; Firebase</div>
-          <p>Discover tourist sights in any city with real-time data, integrated Google Maps, and a dynamic, user-friendly interface.</p>
-          <div class="project-stack">
-            <span class="stack-tag">Flutter</span>
-            <span class="stack-tag">Dart</span>
-            <span class="stack-tag">Google Maps API</span>
-            <span class="stack-tag">Firebase Firestore</span>
-          </div>
-          <a href="https://github.com/mickyololo/city-guide-main-" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
-        </div>
-
-        <div class="project-card">
-          <h3>To-Do List App</h3>
-          <div class="project-role">Solo Developer &middot; Flutter &amp; Firebase</div>
-          <p>Mobile task management app with user authentication, real-time sync, and performance optimizations that improved load times by 30%.</p>
-          <div class="project-stack">
-            <span class="stack-tag">Flutter</span>
-            <span class="stack-tag">Firebase Auth</span>
-            <span class="stack-tag">Provider</span>
-          </div>
-          <a href="https://github.com/mickyololo/to_do_list" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Funds Tracker</h3>
-          <div class="project-role">Solo Developer &middot; C++</div>
-          <p>Desktop application for tracking personal finances with categorized entries, summary reports, and persistent storage.</p>
-          <div class="project-stack">
-            <span class="stack-tag">C++</span>
-            <span class="stack-tag">File I/O</span>
-            <span class="stack-tag">Data Structures</span>
-          </div>
-          <a href="https://github.com/mickyololo/funds-tracker" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
-        </div>
-
-        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-stethoscope"></i></div>
           <h3>Divine's Clinic</h3>
           <div class="project-role">Developer &middot; HTML &amp; Web</div>
           <p>Healthcare clinic website with appointment information, service listings, and a clean, accessible responsive layout.</p>
@@ -801,10 +937,11 @@
             <span class="stack-tag">CSS3</span>
             <span class="stack-tag">Responsive Design</span>
           </div>
-          <a href="https://github.com/mickyololo/Divine-s-Clinic" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+          <a href="https://github.com/mickyololo/Divine-s-Clinic" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right" style="font-size:0.65rem;"></i></a>
         </div>
 
         <div class="project-card">
+          <div class="project-icon"><i class="fas fa-plane-departure"></i></div>
           <h3>Wanderlust Explorer</h3>
           <div class="project-role">Developer &middot; JavaScript</div>
           <p>Travel exploration app with dynamic content, interactive UI elements, and location-based discovery features.</p>
@@ -814,19 +951,34 @@
             <span class="stack-tag">CSS3</span>
             <span class="stack-tag">REST APIs</span>
           </div>
-          <a href="https://github.com/mickyololo/-wanderlust-explorer." class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+          <a href="https://github.com/mickyololo/wanderlust-explorer" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right" style="font-size:0.65rem;"></i></a>
         </div>
 
         <div class="project-card">
-          <h3>Weather Dashboard</h3>
-          <div class="project-role">Solo Developer &middot; JavaScript</div>
-          <p>Real-time weather information app with location search, forecast data, and a clean visual presentation of conditions.</p>
+          <div class="project-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>City Tour Guide</h3>
+          <div class="project-role">Solo Developer &middot; Flutter &amp; Firebase</div>
+          <p>Discover tourist sights in any city with real-time data, integrated Google Maps, and a dynamic, user-friendly interface.</p>
           <div class="project-stack">
-            <span class="stack-tag">JavaScript</span>
-            <span class="stack-tag">Weather API</span>
-            <span class="stack-tag">Responsive UI</span>
+            <span class="stack-tag">Flutter</span>
+            <span class="stack-tag">Dart</span>
+            <span class="stack-tag">Google Maps API</span>
+            <span class="stack-tag">Firebase Firestore</span>
           </div>
-          <a href="https://github.com/mickyololo/Weather-project" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+          <a href="https://github.com/mickyololo/city-guide-main" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right" style="font-size:0.65rem;"></i></a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-wallet"></i></div>
+          <h3>Funds Tracker</h3>
+          <div class="project-role">Solo Developer &middot; C++</div>
+          <p>Desktop application for tracking personal finances with categorized entries, summary reports, and persistent storage.</p>
+          <div class="project-stack">
+            <span class="stack-tag">C++</span>
+            <span class="stack-tag">File I/O</span>
+            <span class="stack-tag">Data Structures</span>
+          </div>
+          <a href="https://github.com/mickyololo/funds-tracker" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right" style="font-size:0.65rem;"></i></a>
         </div>
 
       </div>
