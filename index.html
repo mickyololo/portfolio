@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Orji Micheal · Software Engineer & App Developer</title>
-  <!-- Google Fonts + Font Awesome Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -15,58 +14,56 @@
     }
 
     body {
-      background-color: #fefefe;
+      background-color: #fafbfd;
       font-family: 'Inter', sans-serif;
-      color: #1a1a2c;
-      line-height: 1.5;
+      color: #1e293b;
+      line-height: 1.6;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
     section {
-      padding: 4rem 0;
+      padding: 5rem 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6366f1;
+      margin-bottom: 0.5rem;
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 56px;
-      height: 4px;
-      background: #2563eb;
-      border-radius: 4px;
+      margin-bottom: 2.5rem;
+      color: #0f172a;
     }
 
-    /* Header & Navigation */
+    /* ── Header ── */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 0;
-      flex-wrap: wrap;
-      gap: 1rem;
+      padding: 1.25rem 0;
     }
     .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+    .logo span {
+      color: #6366f1;
     }
     .nav-links {
       display: flex;
@@ -76,247 +73,572 @@
     .nav-links a {
       text-decoration: none;
       font-weight: 500;
-      color: #2d3a5e;
+      font-size: 0.875rem;
+      color: #475569;
       transition: color 0.2s;
     }
     .nav-links a:hover {
-      color: #2563eb;
+      color: #6366f1;
     }
 
-    /* Hero Section */
+    /* ── Hero ── */
     .hero {
-      background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-      border-radius: 0 0 2rem 2rem;
-      padding: 3rem 0 4rem 0;
+      padding: 4rem 0 5rem;
     }
-    .hero-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
       align-items: center;
-      gap: 2rem;
     }
     .hero-text {
-      flex: 1.2;
+      max-width: 600px;
     }
-    .hero-badge {
-      background: #dbeafe;
-      color: #1e40af;
-      display: inline-block;
-      padding: 0.3rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
+    .hero-greeting {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #6366f1;
+      margin-bottom: 0.75rem;
     }
     .hero-text h1 {
-      font-size: 2.8rem;
+      font-size: 2.75rem;
       font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-    .hero-highlight {
-      color: #2563eb;
-      border-bottom: 3px solid #93c5fd;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 1.25rem;
     }
     .hero-text p {
-      font-size: 1.1rem;
-      color: #334155;
-      margin-bottom: 1.8rem;
-      max-width: 550px;
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 520px;
     }
-    .contact-info-hero {
+    .hero-contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-      color: #1e293b;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      color: #334155;
     }
-    .contact-info-hero span i {
-      width: 1.5rem;
-      color: #2563eb;
+    .hero-contact span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hero-contact i {
+      color: #6366f1;
+      font-size: 0.8rem;
     }
     .btn-group {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: #1e3a8a;
+      background: #6366f1;
       color: white;
-      padding: 0.75rem 1.8rem;
-      border-radius: 40px;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
       font-weight: 600;
+      font-size: 0.875rem;
       text-decoration: none;
       transition: all 0.2s;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     .btn-primary:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
+      background: #4f46e5;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(99,102,241,0.3);
     }
     .btn-outline {
-      background: transparent;
-      border: 1.5px solid #94a3b8;
-      padding: 0.75rem 1.8rem;
-      border-radius: 40px;
+      background: white;
+      border: 1.5px solid #e2e8f0;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
       font-weight: 600;
-      color: #1e293b;
+      font-size: 0.875rem;
+      color: #334155;
       text-decoration: none;
       transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     .btn-outline:hover {
-      border-color: #2563eb;
-      color: #2563eb;
+      border-color: #6366f1;
+      color: #6366f1;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.1);
     }
-    .hero-stats {
-      flex: 0.8;
-      background: white;
+
+    /* Portrait */
+    .hero-portrait {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .portrait-frame {
+      width: 280px;
+      height: 320px;
       border-radius: 1.5rem;
-      padding: 1.8rem;
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+      background: linear-gradient(145deg, #ede9fe 0%, #e0e7ff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(99,102,241,0.1);
     }
-    .stat-item {
-      margin-bottom: 1.2rem;
+    .portrait-initials {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #6366f1;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .portrait-caption {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #818cf8;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 2rem 0 0;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 3rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #f1f5f9;
     }
     .stat-number {
       font-weight: 800;
-      font-size: 1.5rem;
-      color: #1e3a8a;
+      font-size: 1.75rem;
+      color: #6366f1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 0.25rem;
     }
 
-    /* Skills grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
-      margin-top: 1rem;
+    /* ── About ── */
+    #about {
+      padding-bottom: 3rem;
     }
-    .skill-card {
+    .about-block {
       background: white;
-      border-radius: 1.2rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      border: 1px solid #e9eef3;
-      transition: all 0.2s;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid #f1f5f9;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
     }
-    .skill-card:hover {
-      border-color: #bfdbfe;
-      box-shadow: 0 12px 20px -12px rgba(0,0,0,0.08);
-    }
-    .skill-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #2563eb;
-    }
-    .skill-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-    }
-    .skill-tags {
+
+    /* ── Experience ── */
+    .exp-list {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
+      flex-direction: column;
+      gap: 1.25rem;
     }
-    .skill-tag {
-      background: #eef2ff;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #1e40af;
-    }
-
-    /* Experience & project cards */
-    .exp-item, .project-card {
+    .exp-item {
       background: white;
-      border-radius: 1.2rem;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      border: 1px solid #edf2f7;
-      transition: 0.2s;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      border: 1px solid #f1f5f9;
+      transition: border-color 0.2s;
+    }
+    .exp-item:hover {
+      border-color: #e0e7ff;
     }
     .exp-header {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-bottom: 0.5rem;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
     }
     .exp-title {
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.05rem;
+      color: #0f172a;
     }
     .exp-date {
-      color: #3b82f6;
+      color: #6366f1;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .exp-company {
       font-weight: 500;
+      font-size: 0.9rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+    .exp-item ul {
+      margin-left: 1.2rem;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+    .exp-item li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* ── Projects grid ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      border: 1px solid #f1f5f9;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: #c7d2fe;
+      box-shadow: 0 8px 24px rgba(99,102,241,0.08);
+      transform: translateY(-2px);
     }
     .project-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
     }
     .project-role {
-      color: #2563eb;
+      color: #6366f1;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       margin-bottom: 0.6rem;
+    }
+    .project-card p {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.6;
+      flex: 1;
     }
     .project-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.8rem 0;
+      gap: 0.4rem;
+      margin: 1rem 0;
     }
-    .stack {
+    .stack-tag {
       background: #f1f5f9;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
       font-size: 0.7rem;
       font-weight: 500;
+      color: #475569;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6366f1;
+      text-decoration: none;
+      margin-top: auto;
+      transition: color 0.2s;
+    }
+    .project-link:hover {
+      color: #4f46e5;
     }
 
-    /* Languages + contact */
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #f1f5f9;
+      transition: border-color 0.2s;
+    }
+    .skill-card:hover {
+      border-color: #c7d2fe;
+    }
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #ede9fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: #6366f1;
+      font-size: 1.1rem;
+    }
+    .skill-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+    .skill-card p {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+    .skill-tag {
+      background: #f5f3ff;
+      padding: 0.15rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #6366f1;
+    }
+
+    /* ── Education & Languages ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #f1f5f9;
+    }
+    .info-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .info-card h3 i {
+      color: #6366f1;
+    }
+    .info-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
     .lang-items {
       display: flex;
-      gap: 2rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
+      margin-bottom: 0.75rem;
     }
     .lang-badge {
-      background: #f1f5f9;
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
+      background: #f5f3ff;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
       font-weight: 500;
+      font-size: 0.8rem;
+      color: #475569;
+    }
+
+    /* ── Interactive demo ── */
+    .demo-section {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    .demo-section h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+    .demo-section > p {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+    .demo-card {
+      background: white;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #f1f5f9;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .demo-card i {
+      font-size: 2rem;
+      color: #6366f1;
+    }
+    .demo-card p {
+      margin-top: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+    .demo-status {
+      background: #f5f3ff;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: #6366f1;
+      display: inline-block;
+    }
+    .demo-note {
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    /* ── Contact ── */
+    .contact-block {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      border: 1px solid #f1f5f9;
+    }
+    .contact-block h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .contact-block > p {
+      margin: 0.75rem auto 1.5rem;
+      max-width: 480px;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+    .contact-btns {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .contact-divider {
+      border: none;
+      border-top: 1px solid #f1f5f9;
+      margin: 2rem 0 1.25rem;
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
     }
     .footer-social a {
       color: #94a3b8;
-      margin: 0 0.8rem;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       transition: color 0.2s;
     }
     .footer-social a:hover {
-      color: #2563eb;
+      color: #6366f1;
     }
-    hr {
-      margin: 1rem 0;
-      border-color: #e2e8f0;
+    .contact-meta {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: #94a3b8;
     }
 
+    /* ── Footer ── */
+    .site-footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+    }
+
+    /* ── Responsive ── */
     @media (max-width: 768px) {
-      .hero-content {
-        flex-direction: column;
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .hero-text p {
+        max-width: none;
+      }
+      .hero-contact {
+        justify-content: center;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .portrait-frame {
+        width: 220px;
+        height: 260px;
+      }
+      .hero-portrait {
+        order: -1;
+      }
+      .stats-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
       .navbar {
         flex-direction: column;
+        gap: 0.75rem;
+      }
+      .nav-links {
+        gap: 1.25rem;
       }
       .section-title {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
       }
       .container {
-        padding: 0 1.2rem;
+        padding: 0 1.25rem;
+      }
+      section {
+        padding: 3rem 0;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-block {
+        padding: 2rem 1.5rem;
+      }
+      .demo-section {
+        padding: 2rem 1.25rem;
       }
     }
   </style>
@@ -326,232 +648,306 @@
 <header>
   <div class="container">
     <nav class="navbar">
-      <div class="logo">ORJI MICHEAL</div>
+      <div class="logo">orji<span>.</span>dev</div>
       <ul class="nav-links">
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Connect</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- Hero with integrated contact & summary -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
+      <div class="hero-inner">
         <div class="hero-text">
-          <div class="hero-badge"><i class="fas fa-code"></i> Software Engineer · Flutter | Full-stack</div>
-          <h1>Orji Micheal <span class="hero-highlight">Chukwuemeka</span></h1>
-          <p>Multifaceted Software Engineer & App Developer with expertise in Flutter, UI/UX, and full-stack web. I blend creative design with robust code to build impactful digital solutions.</p>
-          <div class="contact-info-hero">
+          <div class="hero-greeting">Software Engineer &middot; Flutter &amp; Full-stack</div>
+          <h1>Orji Micheal Chukwuemeka</h1>
+          <p>Multifaceted Software Engineer and App Developer with expertise in Flutter, UI/UX, and full-stack web. I blend creative design with robust code to build impactful digital solutions.</p>
+          <div class="hero-contact">
             <span><i class="fas fa-map-marker-alt"></i> Enugu, Nigeria</span>
-            <span><i class="fas fa-phone-alt"></i> +234 9150447967 / +234 9131067082</span>
+            <span><i class="fas fa-phone-alt"></i> +234 915 044 7967</span>
             <span><i class="fas fa-envelope"></i> orjimicheal.c@gmail.com</span>
           </div>
           <div class="btn-group">
-            <a href="#projects" class="btn-primary"><i class="fab fa-flutter"></i> View Projects</a>
+            <a href="#projects" class="btn-primary"><i class="fas fa-arrow-right"></i> View Projects</a>
+            <a href="https://github.com/mickyololo" class="btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             <a href="https://bit.ly/orjisLinkedin" class="btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/dashboard" class="btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             <a href="https://x.com/michealchu67399" class="btn-outline" target="_blank"><i class="fab fa-twitter"></i> X</a>
           </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-item"><span class="stat-number">5+</span> <br>Tech stacks mastered</div>
-          <div class="stat-item"><span class="stat-number">8+</span> <br>Full projects shipped</div>
-          <div class="stat-item"><span class="stat-number">2+ yrs</span> <br>Teaching & mentorship</div>
-          <div class="stat-item"><i class="fas fa-check-circle" style="color:#2563eb;"></i> Advanced Diploma: Software Engineering</div>
+        <div class="hero-portrait">
+          <div class="portrait-frame">
+            <div class="portrait-initials">OM</div>
+            <div class="portrait-caption">Software Engineer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Tech stacks mastered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">8+</span>
+          <span class="stat-label">Full projects shipped</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2+ yrs</span>
+          <span class="stat-label">Teaching &amp; mentorship</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Summary / About section -->
+  <!-- About -->
   <section id="about">
     <div class="container">
+      <div class="section-label">About</div>
       <h2 class="section-title">Professional Summary</h2>
-      <div style="background: #f8fafc; border-radius: 1.5rem; padding: 1.8rem; border-left: 5px solid #2563eb;">
-        <p style="font-size: 1.05rem; line-height: 1.6;">A multifaceted Software Engineer and App Developer with expertise in Flutter, UI/UX design, and full-stack web development. Proficient in Flutter/Dart, JavaScript, HTML5, Java, Python, and React. Skilled in productivity tools, systems administration, and education technology. Known for strong problem-solving abilities, public speaking, and a passion for building impactful digital solutions.</p>
+      <div class="about-block">
+        <p>A multifaceted Software Engineer and App Developer with expertise in Flutter, UI/UX design, and full-stack web development. Proficient in Flutter/Dart, JavaScript, HTML5, Java, Python, and React. Skilled in productivity tools, systems administration, and education technology. Known for strong problem-solving abilities, public speaking, and a passion for building impactful digital solutions.</p>
       </div>
     </div>
   </section>
 
-  <!-- Work Experience & Instructor role -->
+  <!-- Experience -->
   <section id="experience">
     <div class="container">
+      <div class="section-label">Experience</div>
       <h2 class="section-title">Work Experience</h2>
-      <div class="exp-item">
-        <div class="exp-header">
-          <div class="exp-title">IT Instructor</div>
-          <div class="exp-date">June 2025 – Present</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">IT Instructor</div>
+            <div class="exp-date">June 2025 &ndash; Present</div>
+          </div>
+          <div class="exp-company">Aptech &ndash; Enugu State, Nigeria</div>
+          <ul>
+            <li>Created engaging lesson plans, activities, and projects catering to diverse learning styles.</li>
+            <li>Instructed students on programming languages (Python, Java, Scratch, HTML/CSS, React, Flutter/Dart), operating systems, web and app development.</li>
+          </ul>
         </div>
-        <div style="font-weight: 500; margin-bottom: 0.3rem;">Aptech – Enugu State, Nigeria</div>
-        <ul style="margin-left: 1.2rem; color: #2d3a5e;">
-          <li>Created engaging lesson plans, activities, and projects catering to diverse learning styles.</li>
-          <li>Instructed students on programming languages (Python, Java, Scratch, HTML/CSS, React, Flutter/Dart), operating systems, web and app development.</li>
-        </ul>
-      </div>
-      <div class="exp-item">
-        <div class="exp-header">
-          <div class="exp-title">Software Engineering Trainee / Project Lead</div>
-          <div class="exp-date">2023 – 2025</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Software Engineering Trainee / Project Lead</div>
+            <div class="exp-date">2023 &ndash; 2025</div>
+          </div>
+          <div class="exp-company">Aptech Nigeria &middot; Advanced Diploma</div>
+          <ul>
+            <li>Led multiple cross-functional team projects, delivered full-stack web and mobile apps.</li>
+            <li>Mentored junior developers in Flutter, Firebase, and modern UI/UX practices.</li>
+          </ul>
         </div>
-        <div style="font-weight: 500; margin-bottom: 0.3rem;">Aptech Nigeria · Advanced Diploma</div>
-        <ul style="margin-left: 1.2rem;">
-          <li>Led multiple cross-functional team projects, delivered full-stack web and mobile apps.</li>
-          <li>Mentored junior developers in Flutter, Firebase and modern UI/UX practices.</li>
-        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Projects - showcasing design & dev -->
-  <section id="projects" style="background: #fefefe;">
+  <!-- Projects -->
+  <section id="projects">
     <div class="container">
-      <h2 class="section-title">Featured Projects · Code & Design</h2>
-      <div class="skills-grid">
-        <!-- Maxxwallpaper -->
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+
         <div class="project-card">
-          <h3>Maxxwallpaper.com</h3>
-          <div class="project-role">Project Manager (Jan 2024 – Apr 2024)</div>
-          <p>Managed development and deployment of a wallpaper platform, coordinated team tasks and ensured timely delivery.</p>
-          <div class="project-stack"><span class="stack">Project Management</span><span class="stack">Agile</span><span class="stack">Web Deployment</span></div>
+          <h3>City Tour Guide</h3>
+          <div class="project-role">Solo Developer &middot; Flutter &amp; Firebase</div>
+          <p>Discover tourist sights in any city with real-time data, integrated Google Maps, and a dynamic, user-friendly interface.</p>
+          <div class="project-stack">
+            <span class="stack-tag">Flutter</span>
+            <span class="stack-tag">Dart</span>
+            <span class="stack-tag">Google Maps API</span>
+            <span class="stack-tag">Firebase Firestore</span>
+          </div>
+          <a href="https://github.com/mickyololo/city-guide-main-" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
         </div>
-        <!-- To-Do List App -->
+
         <div class="project-card">
           <h3>To-Do List App</h3>
-          <div class="project-role">Solo Developer · Flutter & Firebase</div>
-          <p>Mobile task management app built with Android Studio, Flutter, and Firebase. Implemented user authentication, improved app performance by 30%.</p>
-          <div class="project-stack"><span class="stack">Flutter/Dart</span><span class="stack">Firebase Auth</span><span class="stack">Provider</span></div>
+          <div class="project-role">Solo Developer &middot; Flutter &amp; Firebase</div>
+          <p>Mobile task management app with user authentication, real-time sync, and performance optimizations that improved load times by 30%.</p>
+          <div class="project-stack">
+            <span class="stack-tag">Flutter</span>
+            <span class="stack-tag">Firebase Auth</span>
+            <span class="stack-tag">Provider</span>
+          </div>
+          <a href="https://github.com/mickyololo/to_do_list" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
         </div>
-        <!-- E‑commerce Website -->
+
         <div class="project-card">
-          <h3>Contributed E‑Commerce Website</h3>
-          <div class="project-role">Lead Developer (Jun 2024 – Sep 2024)</div>
-          <p>Web app for online shopping with Python, Django, HTML/CSS. Designed and integrated payment gateway.</p>
-          <div class="project-stack"><span class="stack">Python/Django</span><span class="stack">PostgreSQL</span><span class="stack">Paystack API</span></div>
+          <h3>Funds Tracker</h3>
+          <div class="project-role">Solo Developer &middot; C++</div>
+          <p>Desktop application for tracking personal finances with categorized entries, summary reports, and persistent storage.</p>
+          <div class="project-stack">
+            <span class="stack-tag">C++</span>
+            <span class="stack-tag">File I/O</span>
+            <span class="stack-tag">Data Structures</span>
+          </div>
+          <a href="https://github.com/mickyololo/funds-tracker" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
         </div>
-        <!-- City Tour Guide App -->
+
         <div class="project-card">
-          <h3>City Tour Guide App</h3>
-          <div class="project-role">Solo Developer · Flutter, Firebase</div>
-          <p>Discover tourist sights in any city. Real-time access to multiple sites, integrated Maps API, and dynamic UI.</p>
-          <div class="project-stack"><span class="stack">Flutter</span><span class="stack">Google Maps</span><span class="stack">Firebase Firestore</span></div>
+          <h3>Divine's Clinic</h3>
+          <div class="project-role">Developer &middot; HTML &amp; Web</div>
+          <p>Healthcare clinic website with appointment information, service listings, and a clean, accessible responsive layout.</p>
+          <div class="project-stack">
+            <span class="stack-tag">HTML5</span>
+            <span class="stack-tag">CSS3</span>
+            <span class="stack-tag">Responsive Design</span>
+          </div>
+          <a href="https://github.com/mickyololo/Divine-s-Clinic" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
         </div>
-        <!-- Additional: design-centric piece -->
+
         <div class="project-card">
-          <h3>Portfolio UI/UX System</h3>
-          <div class="project-role">Design + Frontend</div>
-          <p>Custom portfolio identity: responsive layout, micro-interactions, design tokens from Figma to production-ready HTML/CSS/JS.</p>
-          <div class="project-stack"><span class="stack">Figma</span><span class="stack">Responsive Design</span><span class="stack">CSS Grid/Flex</span></div>
+          <h3>Wanderlust Explorer</h3>
+          <div class="project-role">Developer &middot; JavaScript</div>
+          <p>Travel exploration app with dynamic content, interactive UI elements, and location-based discovery features.</p>
+          <div class="project-stack">
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">HTML5</span>
+            <span class="stack-tag">CSS3</span>
+            <span class="stack-tag">REST APIs</span>
+          </div>
+          <a href="https://github.com/mickyololo/-wanderlust-explorer." class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
         </div>
+
+        <div class="project-card">
+          <h3>Weather Dashboard</h3>
+          <div class="project-role">Solo Developer &middot; JavaScript</div>
+          <p>Real-time weather information app with location search, forecast data, and a clean visual presentation of conditions.</p>
+          <div class="project-stack">
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">Weather API</span>
+            <span class="stack-tag">Responsive UI</span>
+          </div>
+          <a href="https://github.com/mickyololo/Weather-project" class="project-link" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Skills section: design + front-end, app dev -->
+  <!-- Skills -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">Technical Arsenal · Design & Code</h2>
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Technical Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-icon"><i class="fab fa-flutter"></i></div>
           <h3>App Development</h3>
-          <p>Flutter (Dart) · Java · Firebase · Mobile UI/UX · APK Deployment</p>
-          <div class="skill-tags"><span class="skill-tag">Cross-platform</span><span class="skill-tag">Material Design</span><span class="skill-tag">REST APIs</span></div>
+          <p>Flutter (Dart), Java, Firebase, Mobile UI/UX, APK Deployment</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Cross-platform</span>
+            <span class="skill-tag">Material Design</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
         </div>
         <div class="skill-card">
           <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
           <h3>Web Development</h3>
-          <p>Python/Django · HTML5 · CSS3 · JavaScript · React · Responsive Design</p>
-          <div class="skill-tags"><span class="skill-tag">Tailwind</span><span class="skill-tag">SPA</span><span class="skill-tag">Django REST</span></div>
+          <p>Python/Django, HTML5, CSS3, JavaScript, React, Responsive Design</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">SPA</span>
+            <span class="skill-tag">Django REST</span>
+          </div>
         </div>
         <div class="skill-card">
           <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
-          <h3>Design & Productivity</h3>
-          <p>UI/UX design, wireframing, prototyping (Figma/Adobe XD). Advanced Excel (VBA, PivotTables), Microsoft 365 Suite.</p>
-          <div class="skill-tags"><span class="skill-tag">User Research</span><span class="skill-tag">Design Systems</span><span class="skill-tag">VBA</span></div>
+          <h3>Design &amp; Productivity</h3>
+          <p>UI/UX design, wireframing, prototyping (Figma/Adobe XD). Advanced Excel, Microsoft 365.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">User Research</span>
+            <span class="skill-tag">Design Systems</span>
+            <span class="skill-tag">Figma</span>
+          </div>
         </div>
         <div class="skill-card">
           <div class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-          <h3>Systems & EdTech</h3>
-          <p>Windows OS Administration · Hardware Maintenance · Interactive Whiteboards · Learning Management Systems</p>
-          <div class="skill-tags"><span class="skill-tag">IT Instruction</span><span class="skill-tag">LMS</span></div>
+          <h3>Systems &amp; EdTech</h3>
+          <p>Windows OS Administration, Hardware Maintenance, Interactive Whiteboards, LMS</p>
+          <div class="skill-tags">
+            <span class="skill-tag">IT Instruction</span>
+            <span class="skill-tag">LMS</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education + Languages -->
+  <!-- Education & Languages -->
   <section style="padding-top: 0;">
     <div class="container">
-      <div class="skills-grid">
-        <div class="skill-card">
+      <div class="info-grid">
+        <div class="info-card">
           <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-          <p><strong>Aptech Nigeria</strong> — Advanced Diploma in Software Engineering <br> (August 2023 – August 2025)</p>
-          <p style="margin-top: 0.8rem;"><strong>Specializations:</strong> Full-stack, Mobile dev, Algorithms, Database design.</p>
+          <p><strong>Aptech Nigeria</strong> &mdash; Advanced Diploma in Software Engineering<br>(August 2023 &ndash; August 2025)</p>
+          <p style="margin-top: 0.75rem;"><strong>Specializations:</strong> Full-stack, Mobile dev, Algorithms, Database design.</p>
         </div>
-        <div class="skill-card">
+        <div class="info-card">
           <h3><i class="fas fa-language"></i> Languages</h3>
           <div class="lang-items">
-            <span class="lang-badge">English – Expert</span>
-            <span class="lang-badge">Igbo – Native</span>
-            <span class="lang-badge">Pidgin – Fluent</span>
+            <span class="lang-badge">English &ndash; Expert</span>
+            <span class="lang-badge">Igbo &ndash; Native</span>
+            <span class="lang-badge">Pidgin &ndash; Fluent</span>
           </div>
-          <p style="margin-top: 1rem;">Clear technical communication and cross-cultural collaboration.</p>
+          <p>Clear technical communication and cross-cultural collaboration.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive design/dev little demo to showcase front-end craft -->
-  <section style="background: #f1f5f9; border-radius: 2rem; margin: 1rem 0 2rem 0;">
-    <div class="container" style="padding: 2rem 1.5rem;">
-      <div style="text-align: center;">
-        <h3 style="font-size: 1.6rem;">✨ Live Demo: Design + Interactivity ✨</h3>
-        <p style="margin-bottom: 1rem;">A small front-end micro interaction — bridging my UI/UX design sense with JavaScript motion.</p>
-        <div id="interactiveCard" style="background: white; max-width: 400px; margin: 0 auto; border-radius: 2rem; padding: 1.5rem; box-shadow: 0 12px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; cursor: pointer;">
-          <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: #3b82f6;"></i>
-          <p style="margin-top: 0.5rem; font-weight: 500;">hover or click → design meets code</p>
-          <div style="background: #eef2ff; padding: 0.4rem; border-radius: 40px; margin-top: 1rem; font-size: 0.8rem;" id="statusMsg">✦ built with Flutter / React mindset ✦</div>
+  <!-- Interactive Demo -->
+  <section>
+    <div class="container">
+      <div class="demo-section">
+        <h3>Interactive Demo</h3>
+        <p>A micro-interaction showcasing front-end craft &mdash; hover or click the card below.</p>
+        <div id="interactiveCard" class="demo-card">
+          <i class="fas fa-mobile-alt"></i>
+          <p>hover or click &rarr; design meets code</p>
+          <div id="statusMsg" class="demo-status">&#10022; built with Flutter / React mindset &#10022;</div>
         </div>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color:#475569;"><i class="fas fa-code"></i> This card uses CSS transitions & JS – reflecting my passion for front-end craft</p>
+        <p class="demo-note"><i class="fas fa-code"></i> CSS transitions &amp; JavaScript state management</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact + footer -->
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
-      <div style="background: linear-gradient(110deg, #ffffff, #f0f4fe); border-radius: 2rem; padding: 2.5rem; text-align: center;">
-        <h2 style="font-size: 1.8rem;">Let's build something impactful</h2>
-        <p style="margin: 1rem 0; max-width: 550px; margin-left: auto; margin-right: auto;">Open for freelance collaborations, full-stack & Flutter roles, and tech mentorship.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="mailto:orjimicheal.c@gmail.com" class="btn-primary" style="background:#1e3a8a;"><i class="fas fa-envelope"></i> orjimicheal.c@gmail.com</a>
+      <div class="contact-block">
+        <h2>Let's build something impactful</h2>
+        <p>Open for freelance collaborations, full-stack &amp; Flutter roles, and tech mentorship.</p>
+        <div class="contact-btns">
+          <a href="mailto:orjimicheal.c@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i> orjimicheal.c@gmail.com</a>
           <a href="https://bit.ly/orjisLinkedin" target="_blank" class="btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/dashboard" target="_blank" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/mickyololo" target="_blank" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
         </div>
-        <hr style="margin: 2rem 0 1rem 0;">
+        <hr class="contact-divider">
         <div class="footer-social">
           <a href="https://x.com/michealchu67399" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-dev"></i></a>
-          <a href="#"><i class="fab fa-figma"></i></a>
+          <a href="https://github.com/mickyololo" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <p style="margin-top: 1rem; font-size: 0.8rem;">📞 +234 9150447967 / +234 9131067082 | Enugu, Nigeria</p>
+        <p class="contact-meta">+234 915 044 7967 / +234 913 106 7082 &middot; Enugu, Nigeria</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer style="background: #0f172a; color: #cbd5e1; text-align: center; padding: 1.8rem; margin-top: 2rem;">
-  <p>© 2025 Orji Micheal Chukwuemeka — Software Engineer, Flutter & Full‑stack Developer. Designed & coded with purpose.</p>
+<footer class="site-footer">
+  <p>&copy; 2025 Orji Micheal Chukwuemeka &mdash; Software Engineer, Flutter &amp; Full-stack Developer.</p>
 </footer>
 
 <script src="js/interactiveCard.js"></script>
 <script>
-  // interactive front-end demo (showing design+dev synergy)
   var card = document.getElementById('interactiveCard');
   var msgDiv = document.getElementById('statusMsg');
   initInteractiveCard(card, msgDiv);
