@@ -549,34 +549,12 @@
   <p>© 2025 Orji Micheal Chukwuemeka — Software Engineer, Flutter & Full‑stack Developer. Designed & coded with purpose.</p>
 </footer>
 
+<script src="js/interactiveCard.js"></script>
 <script>
   // interactive front-end demo (showing design+dev synergy)
-  const card = document.getElementById('interactiveCard');
-  const msgDiv = document.getElementById('statusMsg');
-
-  function animateCardEffect(type) {
-    if (type === 'hover') {
-      card.style.transform = 'scale(1.02)';
-      card.style.boxShadow = '0 25px 30px -12px rgba(37,99,235,0.2)';
-      msgDiv.innerHTML = '🎨 UI polish · micro interaction ready';
-    } else if (type === 'leave') {
-      card.style.transform = 'scale(1)';
-      card.style.boxShadow = '0 12px 20px rgba(0,0,0,0.05)';
-      msgDiv.innerHTML = '✦ built with Flutter / React mindset ✦';
-    } else if (type === 'click') {
-      card.style.backgroundColor = '#fef9e3';
-      msgDiv.innerHTML = '⚡ Click event: design system + state management ⚡';
-      setTimeout(() => {
-        card.style.backgroundColor = 'white';
-        if (!card.matches(':hover')) msgDiv.innerHTML = '✦ built with Flutter / React mindset ✦';
-        else msgDiv.innerHTML = '🎨 UI polish · micro interaction ready';
-      }, 700);
-    }
-  }
-
-  card.addEventListener('mouseenter', () => animateCardEffect('hover'));
-  card.addEventListener('mouseleave', () => animateCardEffect('leave'));
-  card.addEventListener('click', () => animateCardEffect('click'));
+  var card = document.getElementById('interactiveCard');
+  var msgDiv = document.getElementById('statusMsg');
+  initInteractiveCard(card, msgDiv);
 </script>
 </body>
 </html>
