@@ -27,20 +27,20 @@ function animateCardEffect(type, card, msgDiv, opts) {
   if (type === 'hover') {
     card.style.transform = opts.hoverScale;
     card.style.boxShadow = opts.hoverShadow;
-    msgDiv.innerHTML = MESSAGES.hover;
+    msgDiv.textContent = MESSAGES.hover;
   } else if (type === 'leave') {
     card.style.transform = opts.restScale;
     card.style.boxShadow = opts.restShadow;
-    msgDiv.innerHTML = MESSAGES.rest;
+    msgDiv.textContent = MESSAGES.rest;
   } else if (type === 'click') {
     card.style.backgroundColor = opts.clickBg;
-    msgDiv.innerHTML = MESSAGES.click;
+    msgDiv.textContent = MESSAGES.click;
     setTimeout(function () {
       card.style.backgroundColor = opts.restBg;
       if (!card.matches(':hover')) {
-        msgDiv.innerHTML = MESSAGES.rest;
+        msgDiv.textContent = MESSAGES.rest;
       } else {
-        msgDiv.innerHTML = MESSAGES.hover;
+        msgDiv.textContent = MESSAGES.hover;
       }
     }, opts.clickResetDelay);
   }

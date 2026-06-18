@@ -52,7 +52,7 @@ describe('animateCardEffect', () => {
 
     it('sets the hover message', () => {
       animateCardEffect('hover', els.card, els.msgDiv);
-      expect(els.msgDiv.innerHTML).toBe(MESSAGES.hover);
+      expect(els.msgDiv.textContent).toBe(MESSAGES.hover);
     });
   });
 
@@ -71,7 +71,7 @@ describe('animateCardEffect', () => {
 
     it('sets the rest message', () => {
       animateCardEffect('leave', els.card, els.msgDiv);
-      expect(els.msgDiv.innerHTML).toBe(MESSAGES.rest);
+      expect(els.msgDiv.textContent).toBe(MESSAGES.rest);
     });
   });
 
@@ -91,7 +91,7 @@ describe('animateCardEffect', () => {
     it('sets the click background colour and message', () => {
       animateCardEffect('click', els.card, els.msgDiv);
       expect(els.card.style.backgroundColor).not.toBe('');
-      expect(els.msgDiv.innerHTML).toBe(MESSAGES.click);
+      expect(els.msgDiv.textContent).toBe(MESSAGES.click);
     });
 
     it('resets background after the configured delay', () => {
@@ -103,7 +103,7 @@ describe('animateCardEffect', () => {
     it('shows rest message after timeout when card is not hovered', () => {
       animateCardEffect('click', els.card, els.msgDiv);
       jest.advanceTimersByTime(DEFAULTS.clickResetDelay);
-      expect(els.msgDiv.innerHTML).toBe(MESSAGES.rest);
+      expect(els.msgDiv.textContent).toBe(MESSAGES.rest);
     });
 
     it('shows hover message after timeout when card is still hovered', () => {
@@ -113,7 +113,7 @@ describe('animateCardEffect', () => {
       animateCardEffect('click', els.card, els.msgDiv);
       jest.advanceTimersByTime(DEFAULTS.clickResetDelay);
       expect(els.card.matches).toHaveBeenCalledWith(':hover');
-      expect(els.msgDiv.innerHTML).toBe(MESSAGES.hover);
+      expect(els.msgDiv.textContent).toBe(MESSAGES.hover);
     });
 
     it('uses the default 700ms delay', () => {
@@ -223,7 +223,7 @@ describe('initInteractiveCard', () => {
     initInteractiveCard(els.card, els.msgDiv);
     els.card.dispatchEvent(new Event('mouseenter'));
     expect(els.card.style.transform).toBe(DEFAULTS.hoverScale);
-    expect(els.msgDiv.innerHTML).toBe(MESSAGES.hover);
+    expect(els.msgDiv.textContent).toBe(MESSAGES.hover);
   });
 
   it('applies leave effect on mouseleave event', () => {
@@ -231,7 +231,7 @@ describe('initInteractiveCard', () => {
     els.card.dispatchEvent(new Event('mouseenter'));
     els.card.dispatchEvent(new Event('mouseleave'));
     expect(els.card.style.transform).toBe(DEFAULTS.restScale);
-    expect(els.msgDiv.innerHTML).toBe(MESSAGES.rest);
+    expect(els.msgDiv.textContent).toBe(MESSAGES.rest);
   });
 
   it('applies click effect on click event', () => {
@@ -239,7 +239,7 @@ describe('initInteractiveCard', () => {
     initInteractiveCard(els.card, els.msgDiv);
     els.card.dispatchEvent(new Event('click'));
     expect(els.card.style.backgroundColor).not.toBe('');
-    expect(els.msgDiv.innerHTML).toBe(MESSAGES.click);
+    expect(els.msgDiv.textContent).toBe(MESSAGES.click);
     jest.useRealTimers();
   });
 });
