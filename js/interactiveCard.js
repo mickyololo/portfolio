@@ -21,33 +21,49 @@ const MESSAGES = {
   click: '⚡ Click event: design system + state management ⚡',
 };
 
+function isHovered(el) {
+  try {
+    return el.matches(':hover');
+  } catch (e) {
+    return false;
+  }
+}
+
 function animateCardEffect(type, card, msgDiv, opts) {
   opts = Object.assign({}, DEFAULTS, opts);
 
-  if (type === 'hover') {
-    card.style.transform = opts.hoverScale;
-    card.style.boxShadow = opts.hoverShadow;
-    msgDiv.innerHTML = MESSAGES.hover;
-  } else if (type === 'leave') {
-    card.style.transform = opts.restScale;
-    card.style.boxShadow = opts.restShadow;
-    msgDiv.innerHTML = MESSAGES.rest;
-  } else if (type === 'click') {
-    card.style.backgroundColor = opts.clickBg;
-    msgDiv.innerHTML = MESSAGES.click;
-    setTimeout(function () {
-      card.style.backgroundColor = opts.restBg;
-      if (!card.matches(':hover')) {
-        msgDiv.innerHTML = MESSAGES.rest;
-      } else {
-        msgDiv.innerHTML = MESSAGES.hover;
-      }
-    }, opts.clickResetDelay);
+  try {
+    if (type === 'hover') {
+      card.style.transform = opts.hoverScale;
+      card.style.boxShadow = opts.hoverShadow;
+      msgDiv.textContent = MESSAGES.hover;
+    } else if (type === 'leave') {
+      card.style.transform = opts.restScale;
+      card.style.boxShadow = opts.restShadow;
+      msgDiv.textContent = MESSAGES.rest;
+    } else if (type === 'click') {
+      card.style.backgroundColor = opts.clickBg;
+      msgDiv.textContent = MESSAGES.click;
+      setTimeout(function () {
+        try {
+          card.style.backgroundColor = opts.restBg;
+          msgDiv.textContent = isHovered(card) ? MESSAGES.hover : MESSAGES.rest;
+        } catch (err) {
+          console.error('Error resetting card state:', err);
+        }
+      }, opts.clickResetDelay);
+    }
+  } catch (err) {
+    console.error('Error in card animation (' + type + '):', err);
   }
 }
 
 function initInteractiveCard(card, msgDiv, opts) {
-  if (!card || !msgDiv) return null;
+  if (!card || !msgDiv) {
+    console.error('initInteractiveCard: missing required element(s) —' +
+      (!card ? ' card' : '') + (!msgDiv ? ' msgDiv' : ''));
+    return null;
+  }
 
   var handlers = {
     mouseenter: function () { animateCardEffect('hover', card, msgDiv, opts); },
